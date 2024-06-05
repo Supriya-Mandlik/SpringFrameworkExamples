@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <bean class="in.SetterMethodDependencyInjection.Address" id="addId">
+    <property name="houseno" value="111"/>
+    <property name="city" value="Chandigarh" />
+    <property name="pincode" value="123456" />
+    </bean>
+    
+    <bean class="in.SetterMethodDependencyInjection.Student" id="stdId" scope = "prototype">
+    <property name="name" value="Deepak" />
+    <property name="rollno" value="101" />
+    <property name="address" ref="addId" />
+    
+    <!--  here we are injecting address class object into student class object . 
+    so we have to create first Address class object. 
+    then we have to give address class object id to student class object.
+ Here we are giving Id not value therefore we have to use "ref" attribute instead of "value" attribute.
+    ref is a reference -->
+   
+    </bean>
+    
+
+</beans>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <bean class="in.xmlAutowiringDIUsingbyTypeMode.Address" id="addrId1" autowire-candidate="false" > <!-- by using byType mode of autowire  -->
+    <property name="houseno" value="111" />
+    <property name="city" value="pune" />
+    <property name="pincode" value="123456" />
+    </bean>
+    <!-- autowire-candidate is used when we have more than one object and we have to choose one.
+    the value of autowire-candidate is true or false -->
+    
+    <bean class="in.xmlAutowiringDIUsingbyTypeMode.Address" id="addrId2" > <!-- by using byType mode of autowire  -->
+    <property name="houseno" value="121" />
+    <property name="city" value="hyderabad" />
+    <property name="pincode" value="123456" />
+    </bean>
+    
+  <bean class="in.xmlAutowiringDIUsingbyTypeMode.Student" id="stdId" autowire = "byType"> <!-- by using byType mode of autowire  -->
+    <property name="name" value="deepak" />
+    <property name="rollno" value="100" />   
+    </bean>
+
+</beans>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <bean class="in.xmlAutowiringDIUsingconstructorMode.Address" id="addrId1"  > <!-- by using constructor mode of autowire  -->
+   <constructor-arg value="111" />
+    <constructor-arg value="pune" />
+     <constructor-arg value="111111" />
+    </bean>
+    
+    <!-- autowire-candidate is used when we have more than one object and we have to choose one.
+    the value of autowire-candidate is true or false -->
+    
+    <bean class="in.xmlAutowiringDIUsingconstructorMode.Address" id="addrId2" autowire-candidate="false"> <!-- by using constructor mode of autowire  -->
+   <constructor-arg value="121" />
+    <constructor-arg value="delhi" />
+     <constructor-arg value="222222" />
+    </bean>
+    
+  <bean class="in.xmlAutowiringDIUsingconstructorMode.Student" id="stdId" autowire = "constructor"> <!-- by using constructor mode of autowire  -->
+    <constructor-arg value="Deepak" index="0"/> <!-- here index position is mandatory -->
+    <constructor-arg value="100" index="1"/>  
+    </bean>
+
+</beans>
